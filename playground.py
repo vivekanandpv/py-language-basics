@@ -52,8 +52,7 @@ print(f'vowels after clear: {vowels}')
 # x = y is just the reference copy
 x = [1, 2, 3, 4]
 y = x.copy()  # shallow copy, can consider y = x[:]
-x[2] = 1000  # till this point x and y are the same reference!
-print(f'Are x and y same reference? {x == y}')
+print(f'Are x and y same reference? {x is y}')
 print(f'list x: {x}')
 print(f'list y: {y}')
 
