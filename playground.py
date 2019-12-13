@@ -1,35 +1,28 @@
-book = {
-    'title': 'War and Peace',
-    'author': 'Leo Tolstoy',
-    'original_language': 'Russian',
-    'category': 'Novel'
-}
+# A set is mathematical in its notion
+# Order is irrelevant
+# cannot change the existing elements
+# but can add and remove
+# set operations are allowed
+letters = {'A', 'B', 'C'}
 
-# accessing by keys
-print(f'original title: {book["title"]}')
-# also, book.get('title')
+# A set is an iterable collection
+for el in letters:
+    print(f'element: {el}')
 
-# mutation
-book['title'] = 'Anna Karenina'
-print(f'modified title: {book.get("title")}')
+# existence
+print('Z' in letters)
 
-# iterator gives keys by default
-# use for val in book.values() for values
-# use for item in book.items() for set-like object for key and value
+# add
+letters.add('D')
+# existence matters, order is irrelevant
+print(f'letters after add: {letters}')
 
-# existence: if 'title' in book
+# remove
+letters.remove('C')
+print(f'letters after remove: {letters}')
+# discard can also be used
+# pop(), though works, is not recommended as the order cannot be presumed
 
-# adding new pair
-book['year'] = 1878
-
-print(f'book after adding year {book.get("year")}')
-
-# removing: book.pop('key') or del book['key']
-
-book.pop('category')
-print(f'book after pop() for category {book}')
-
-# update: if key exists, value is changed
-# if key doesn't exist, new pair is created
-book.update({'title': 'War and Peace'})
-print(f'book after update {book}')
+# adding duplicate is not an error, but has no effect
+letters.add('A')
+print(f'letters after adding duplicate: {letters}')
