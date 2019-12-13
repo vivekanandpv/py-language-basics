@@ -4,8 +4,12 @@ class Car:
 
     # all instance methods should take self
     # as the first argument
-
+    # __init__ should set class invariants
+    # that are fixed for the life-time of the object
     def __init__(self, name='Default'):
+        # no access modifiers
+        # everything is public
+        # implementations typically have _
         self._name = name
 
     def get_name(self):
