@@ -52,3 +52,12 @@ print(f'class method: {vehicle_one.get_country}')
 
 # Like a plain function
 print(f'static method: {vehicle_one.get_city}')
+
+# dynamically adding properties to objects
+vehicle_one.x = 200
+print(vehicle_one.x)
+
+# in fact, this is what happens when class variable
+# is modified using an instance
+# we create a property dynamically, which will mask
+# the class variable
