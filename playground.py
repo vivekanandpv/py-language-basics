@@ -1,28 +1,30 @@
-# A set is mathematical in its notion
-# Order is irrelevant
-# cannot change the existing elements
-# but can add and remove
-# set operations are allowed
-letters = {'A', 'B', 'C'}
+# A set supports mathematical notions such as:
+# union, intersection, difference
 
-# A set is an iterable collection
-for el in letters:
-    print(f'element: {el}')
+# subset and superset flags
 
-# existence
-print('Z' in letters)
+even_numbers = {2, 4, 6, 8}
+odd_numbers = {1, 3, 5, 7, 9}
+natural_numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9}
 
-# add
-letters.add('D')
-# existence matters, order is irrelevant
-print(f'letters after add: {letters}')
+print(
+    f'even_numbers is the subset of natural_numbers: {even_numbers.issubset(natural_numbers)}')
 
-# remove
-letters.remove('C')
-print(f'letters after remove: {letters}')
-# discard can also be used
-# pop(), though works, is not recommended as the order cannot be presumed
+print(
+    f'natural_numbers is the superset of even_numbers: {natural_numbers.issuperset(even_numbers)}')
 
-# adding duplicate is not an error, but has no effect
-letters.add('A')
-print(f'letters after adding duplicate: {letters}')
+print(
+    f'even_numbers and odd_numbers are disjoint: {even_numbers.isdisjoint(odd_numbers)}')
+
+print(f'union of even and odd numbers: {odd_numbers.union(even_numbers)}')
+
+print(
+    f'intersection of even and natural numbers: {natural_numbers.intersection(even_numbers)}')
+
+print(
+    f'difference between natural and even numbers: {natural_numbers.difference(even_numbers)}')
+
+
+# further reading: symmetric_difference
+# intersection_update, difference_update,
+# symmetric_difference_update
