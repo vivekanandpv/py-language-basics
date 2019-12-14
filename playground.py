@@ -14,15 +14,16 @@ foo(100, lambda v: print(f'callback: {v}'))
 # higher-order functions: closure example
 
 
-def coffee_maker(config):
+def coffee_maker(counter):
     def dispence_coffee():
-        config['counter'] += 1
-        print(f'dispensing... {config.get("counter")}')
+        nonlocal counter
+        counter += 1
+        print(f'dispensing... {counter}')
 
     return dispence_coffee
 
 
-dispenser = coffee_maker({'counter': 0})
+dispenser = coffee_maker(0)
 
 dispenser()
 dispenser()
