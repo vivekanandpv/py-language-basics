@@ -16,6 +16,7 @@ foo(100, lambda v: print(f'callback: {v}'))
 
 def coffee_maker(counter):
     def dispence_coffee():
+        # global for module level name binding
         nonlocal counter
         counter += 1
         print(f'dispensing... {counter}')
