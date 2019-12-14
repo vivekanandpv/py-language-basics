@@ -1,3 +1,9 @@
+# generators are lazy
+# if next() is applied at end,
+# StopIterationError is raised
+# generators can be infinite
+
+
 def range_clone(start=0, end=10):
 
     index = start
@@ -37,3 +43,21 @@ def get_distinct(iterable):
 
 for i in get_distinct([1, 2, 3, 4, 5, 4, 3, 2, 1, 6, 7, 8]):
     print(f'distinct: {i}')
+
+
+def fibonacci_infinite(start=1):
+    a = start
+    b = start
+
+    while True:
+        a, b = b, a + b
+        yield a
+
+
+for i in fibonacci_infinite():
+
+    if i > 1000:
+        print('Fibonacci infinite ended')
+        break
+    else:
+        print(f'Fibonacci infinite: {i}')
