@@ -1,0 +1,11 @@
+Synopsis: Create a book store system
+
+A book store holds many books
+Every book has category, pages, edition, author, publisher, price
+Each book has to be registered in by a staff
+Staff has name, id, city
+Every book has an interested reader list
+Reader has name, id, email, phone, city
+A reader can buy a book
+On buying, reader gets a receipt
+A receipt has id, date, book, staff, amount
