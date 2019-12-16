@@ -13,6 +13,7 @@ def upper_case(f):
         print(f'wrapper got: {result}, and returning')
         return result.upper()
 
+    print('upper_case returning')
     return wrapper
 
 
