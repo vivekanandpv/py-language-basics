@@ -72,9 +72,9 @@ json_string = '''[{
     "ip_address": "28.134.140.206"
 }]'''
 
-# loads for parsing the json
+
 json_data = json.loads(json_string)
 
-for item in json_data:
-    print(f'item: {json.dumps(item, indent=4, sort_keys = True)}')
-    print('------------------')
+# dump for writing json to file
+with open('info.json', 'w') as file_reference:
+    json.dump(json_data, file_reference)
