@@ -5,10 +5,10 @@
 
 
 def upper_case(f):
-    print('upper_case called')
+    print(f'upper_case called {f}')
 
     def wrapper(*args, **kwargs):
-        print('upper_case wrapper called')
+        print(f'upper_case wrapper called args: {args} kwargs: {kwargs}')
         result = f(*args, **kwargs)
         print(f'wrapper got: {result}, and returning')
         return result.upper()
@@ -18,9 +18,9 @@ def upper_case(f):
 
 
 @upper_case
-def get_city():
+def get_city(x, y):
     print('get_city called')
     return 'bengaluru'
 
 
-print(f'final result: {get_city()}')
+print(f'final result: {get_city("value of x", y=1200)}')
