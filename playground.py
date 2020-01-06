@@ -7,18 +7,29 @@
 # 2.	rounding off decimal places to 2
 
 
-def indian_rupee(f):
+def currency(country):
     # define a wrapper function
-    def wrapper(*args, **kwargs):
-        amount = f(*args, **kwargs)
-        amount = round(amount, 2)
-        return f'₹ {amount}'
+    def wrapper(f):
+        def inner_wrapper(*args, **kwargs):
+            amount = f(*args, **kwargs)
+            amount = round(amount, 2)
+
+            if (country.lower() == 'india'):
+                return f'₹ {amount}'
+            elif (country.lower() == 'usa'):
+                return f'$ {amount}'
+            elif (country.lower() == 'europe'):
+                return f'€ {amount}'
+            else:
+                return f'Unknown {amount}'
+
+        return inner_wrapper
 
     # return the wrapper function
     return wrapper
 
 
-@indian_rupee
+@currency('indIA')
 def get_amount(amount):
     return amount
 
