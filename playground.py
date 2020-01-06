@@ -9,7 +9,7 @@
 
 # We take arbitrary arguments as *numbers
 def do_work(*numbers):
-    # numbers is a tuple inside
+    # numbers (NOT *numbers) is a tuple inside
     sum = 0
 
     for n in numbers:
