@@ -1,36 +1,43 @@
-# Integers
-print(type(100))  # int
+#   Strings can be written in single or double quotes.
+#   There is no character type.
+name = 'Wilson Jacob'
+city = "Wisconsin"
 
-# Floating-point Numbers
-# float is actually a double-precision floating point number (64-bit)
-print(type(3.14159265359))
+#   String concatenation
+print('Name: ' + name + '; city: ' + city)
 
-# Complex numbers
-print(type(2 - 3j))
+#   Formatted strings
+print(F'Name: {name}; city: {city}')  # F is also allowed, but f is conventionally used
 
-# Strings (type is called str)
-print(type("Hello there"))
+#   Multiline strings
+print('''This is a multiline
+note for all the students
+of computer science.''')  # You can use double quotes instead
 
-# Booleans (type is called bool)
-print(type(True))  # First letter is capital!
+#   Unicode is directly supported in Python 3.x
+print('''नमस्ते''')
 
-# Function
-print(type(lambda x: None))
+#   You can also use unicode code units
+#   This is Python 2.x style
+print(u'\u265E')  # Chess black night
 
-# Built-in functions or methods (globally available)
-print(type(abs))    # builtin_function_or_method
+#   In Python 3.x, we can directly embed the character we want
+print('♞')
 
-# ----------------
-# Collection types
+#   Python 2.x formatted strings (uses indexes)
+print('Name: {0}; city: {1}'.format(name, city))
 
-# List (array)
-print(type([1, True, 'Hello']))
+#   Other variants
 
-# Tuple (read-only array)
-print(type((1, 3.1454, 'Oh!', False)))
+#   without indexes
+print('Name: {}; city: {}'.format(name, city))
 
-# Dictionary (map)
-print(type({'country': 'India', 'code': 'IN'}))  # dict
+#   named placeholders
+print('Name: {user_name}; city: {user_city}'.format(user_name=name, user_city=city))
 
-# Set (for unique elements)
-print(type({100, 2.789, 'Bengaluru'}))
+#   Providing other formatting
+pi = 3.141592635
+print('π = {math_pi:.4f}'.format(math_pi=pi))
+
+#   Some useful formatting types:
+#   https://docs.python.org/3.4/library/string.html#format-specification-mini-language
